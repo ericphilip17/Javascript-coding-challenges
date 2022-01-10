@@ -34,72 +34,7 @@ function codingChallenge1(){
 
     console.log('Mark\'s BMI: ' + mark_BMI + '\nJohn\'s BMI: ' + john_BMI);
     
-    
-   //Coding challenge 6//
-
-(function(){
-    var Questions = function(qns, answers, correct){
-        this.qns = qns;
-        this.answers = answers;
-        this.correct = correct;
-    }
-
-    Questions.qns = [
-        'What\'s the name of this course tutor?',
-        'Who was the first president of Kenya?',
-        'Is Nairobi the capical city of Kenya?',
-        'What is the hearbeat rate of a normal human?',
-        'Between cat and dog, which pet is bigger?',
-    ]
-    
-    Questions.answers = [
-        ['Jonas', 'Mike', 'Steve'],
-        ['Kibaki', 'Uhuru', 'Jomo'],
-        [true, false],
-        [65, 80, 56, 72],
-        ['Dog', 'Cat']
-    ]
-    
-    Questions.correct = [
-        Questions.answers[0][0],
-        Questions.answers[1][2],
-        Questions.answers[2][0],
-        Questions.answers[3][3],
-        Questions.answers[4][0]
-    ]
-
-    var rightWrong = {
-        correct: 'Correct!',
-        wrong: 'Wrong!',
-        elseResponse: 'Invalid input!'
-    }
-
-    var randomNum = Math.floor(Math.random() * Questions.qns.length);
-
-    for(var i = 0; i < Questions.answers[randomNum].length; i++){
-        console.log(`${i}: ${Questions.answers[randomNum][i]}`);
-        
-    }
-    
-    //Index of the entered value
-    var playerAnswer = parseInt(prompt(Questions.qns[randomNum]));
-
-    //Actual answer
-    var actualAns = Questions.correct[randomNum];
-    
-    //Array with answers for the current random question
-    var currentArrAns = Questions.answers[randomNum]
-
-    if(currentArrAns.indexOf(actualAns) === playerAnswer){
-        console.log(rightWrong.correct)
-    }else if(currentArrAns.indexOf(actualAns) !== playerAnswer){
-        console.log(rightWrong.wrong)
-    }else {
-        console.log(rightWrong.elseResponse);
-    }  
-
-})();
-
+  
     if(mark_BMI > john_BMI){
         console.log('Mark has a larger BMI');
     }else {
@@ -399,4 +334,71 @@ var avgTips = function(johnTips, markTips){
 
 }
 avgTips(johnObject.tips, markObject.tips);
+
+
+
+//Coding challenge 7//
+
+(function(){
+    var Questions = function(qns, answers, correct){
+        this.qns = qns;
+        this.answers = answers;
+        this.correct = correct;
+    }
+
+    Questions.qns = [
+        'What\'s the name of this course tutor?',
+        'Who was the first president of Kenya?',
+        'Is Nairobi the capical city of Kenya?',
+        'What is the hearbeat rate of a normal human?',
+        'Between cat and dog, which pet is bigger?',
+    ]
+    
+    Questions.answers = [
+        ['Jonas', 'Mike', 'Steve'],
+        ['Kibaki', 'Uhuru', 'Jomo'],
+        [true, false],
+        [65, 80, 56, 72],
+        ['Dog', 'Cat']
+    ]
+    
+    Questions.correct = [
+        Questions.answers[0][0],
+        Questions.answers[1][2],
+        Questions.answers[2][0],
+        Questions.answers[3][3],
+        Questions.answers[4][0]
+    ]
+
+    var rightWrong = {
+        correct: 'Correct!',
+        wrong: 'Wrong!',
+        elseResponse: 'Invalid input!'
+    }
+
+    var randomNum = Math.floor(Math.random() * Questions.qns.length);
+
+    for(var i = 0; i < Questions.answers[randomNum].length; i++){
+        console.log(`${i}: ${Questions.answers[randomNum][i]}`);
+        
+    }
+    
+    //Index of the entered value
+    var playerAnswer = parseInt(prompt(Questions.qns[randomNum]));
+
+    //Actual answer
+    var actualAns = Questions.correct[randomNum];
+    
+    //Array with answers for the current random question
+    var currentArrAns = Questions.answers[randomNum]
+
+    if(currentArrAns.indexOf(actualAns) === playerAnswer){
+        console.log(rightWrong.correct)
+    }else if(currentArrAns.indexOf(actualAns) !== playerAnswer){
+        console.log(rightWrong.wrong)
+    }else {
+        console.log(rightWrong.elseResponse);
+    }  
+
+})();
 
