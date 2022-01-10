@@ -402,3 +402,51 @@ avgTips(johnObject.tips, markObject.tips);
 
 })();
 
+//CODING CHALLENGE 7: improved solution
+
+(function(){
+
+    var Questions = function(qn, answers, correct){
+        this.qn = qn;
+        this.answers = answers;
+        this.correct = correct;
+    }
+    
+    Questions.prototype.displayAnswers = function(){
+        console.log(this.qn);
+        for(var i = 0; i < this.answers.length; i++){
+            console.log(`${i}: ${this.answers[i]}`);
+        }
+        return this.correct;
+    }
+
+    var q1 = new Questions('What\'s the name of this course tutor?', ['Jonas', 'Mike', 'Steve'], 0);
+    var q2 = new Questions('Who was the first president of Kenya?', ['Kibaki', 'Uhuru', 'Jomo'], 2);
+    var q3 = new Questions('Is Nairobi the capical city of Kenya?', [true, false], 0);
+
+    var qnsArray = [q1, q2, q3];
+
+    var n = Math.floor(Math.random() * qnsArray.length);
+
+    var correctAns = qnsArray[n].displayAnswers();
+
+    Questions.prototype.displayQn = function(){
+        var userVal = parseInt(prompt(this.qn));
+        console.log(userVal)
+        return userVal;
+    }
+
+    var userVal = qnsArray[n].displayQn();
+
+    Questions.__proto__.rightWrong2 = {
+        correct1: 'Correct!',
+        wrong1: 'Wrong!'
+    }
+    
+    if(userVal === correctAns){
+        console.log(Questions.rightWrong2.correct1)
+    }else {
+        console.log(Questions.rightWrong2.wrong2);
+    }
+
+})();
